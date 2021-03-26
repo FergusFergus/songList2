@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist</title>
+    <script language="javascript" src="playlist.json"></script>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Spoots!</h1>
+
+    <label for="filter">Filter by genre</label>
+    <select name="filter" id="filter">
+        <option value="All">All</option>
+        <option value="Alternative/Indie">Alternative/Indie</option>
+        <option value="Neo-folk">Neo-folk</option>
+        <option value="Electropop/Folktronica">Electropop/Folktronica</option>
+        <option value="Neo Soul">Neo Soul</option>
+        <option value="Folk Rock">Folk Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Country">Country</option>
+        <option value="Folk">Folk</option>
+    </select>
+
+    <input type="button" value="Filter" id="Submit"/>
+
+    <div id="songData"><div>
+
+    <script language="javascript">
+        function filterSongList(genre) {
+            stringSongs = JSON.stringify(playlist);
+            songs = JSON.parse(stringSongs);
+
+            output = "<table>" +
+                    "<tr>" +
+                    "<th>Title</th>" +
+                    "<th>Artist</th>" +
+                    "<th>Genre</th>" +
+                    "<th>Year</th>" +
+                    "</tr>";
+
+            for (i = 0; i < 10; i++) {
+                if (songs["genre"][i] == genre || (genre == "All")) {
+                    output += "<tr>" +
+                            "<td>" + songs["songNames"][i] + "</td>" +
+                            "<td>" + songs["artists"][i] + "</td>" +
+                            "<td>" + songs["genre"][i] + "</td>" +
+                            "<td>" + songs["year"][i] + "</td>" +
+                            "</tr>";
+                }
+            }
+
+            output += "</table>"
+
+            document.getElementById("songData").innerHTML=output
+        }
+
+        filterSongList("All")
+
+
+        $("#Submit").click(function() {
+            genre = document.getElementById("filter").value
+            filterSongList(genre)
+        });
+    </script>
+
+</body>
+
+</html>

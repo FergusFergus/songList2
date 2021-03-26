@@ -1,0 +1,13 @@
+playlist = {
+    "songNames" : ["Honey Whiskey", "Bullet", "Running with the Wolves",
+                   "Monsters", "Short Change Hero", "Dust Bowl Dance",
+                   "Human", "Hurt", "Ghost Towns", "Wolves of the Revolution"],
+    "artists"   : ["Nothing But Thieves", "The Ballroom Thieves", "Aurora",
+                   "Seafret", "The Heavy", "Mumford and Sons", "Rag'n'Bone Man",
+                   "Jonny Cash", "Radical Face", "The Arcadian Wild"],
+    "genre"     : ["Alternative/Indie", "Neo-folk", "Electropop/Folktronica",
+                   "Alternative/Indie", "Neo Soul", "Folk Rock", "Pop",
+                   "Country", "Folk", "Folk"],
+    "year"      : ["2015", "2015", "2016", "2020", "2009", "2009", "2016",
+                   "2002", "2011", "2016"]
+}
